@@ -6,3 +6,4 @@
 //! tracked as individual seed issues — one file per mock keeps them merge-safe.
 
 pub mod token;
+pub mod burnable_token;
