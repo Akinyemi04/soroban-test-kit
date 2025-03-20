@@ -74,3 +74,4 @@ mod test {
         assert_approx_eq!(1_000, 2_000, 5);
     }
 }
+pub mod addr_eq;
