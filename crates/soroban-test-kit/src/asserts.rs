@@ -76,3 +76,4 @@ mod test {
 }
 pub mod addr_eq;
 pub mod vec_unordered;
+pub mod sorted;
