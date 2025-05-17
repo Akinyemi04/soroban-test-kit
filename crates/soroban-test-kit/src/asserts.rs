@@ -77,3 +77,4 @@ mod test {
 pub mod addr_eq;
 pub mod vec_unordered;
 pub mod sorted;
+pub mod approx_u128;
