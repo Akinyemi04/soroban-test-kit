@@ -8,3 +8,4 @@
 pub mod token;
 pub mod burnable_token;
 pub mod allowance_token;
+pub mod noop;
