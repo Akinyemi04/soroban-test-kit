@@ -10,3 +10,4 @@ pub mod burnable_token;
 pub mod allowance_token;
 pub mod noop;
 pub mod panic_on_call;
+pub mod event_emitter;
