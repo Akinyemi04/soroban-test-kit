@@ -80,3 +80,4 @@ pub mod sorted;
 pub mod approx_u128;
 pub mod approx_i64;
 pub mod address_set;
+pub mod map_contains;
