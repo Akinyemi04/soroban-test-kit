@@ -82,3 +82,4 @@ pub mod approx_i64;
 pub mod address_set;
 pub mod map_contains;
 pub mod zeroness;
+pub mod panics;
