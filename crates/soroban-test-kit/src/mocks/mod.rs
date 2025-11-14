@@ -13,3 +13,4 @@ pub mod panic_on_call;
 pub mod event_emitter;
 pub mod sac;
 pub mod counter;
+pub mod configurable_receiver;
