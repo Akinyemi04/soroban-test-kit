@@ -14,3 +14,4 @@ pub mod event_emitter;
 pub mod sac;
 pub mod counter;
 pub mod configurable_receiver;
+pub mod decimals_token;
