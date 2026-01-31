@@ -15,3 +15,4 @@ pub mod sac;
 pub mod counter;
 pub mod configurable_receiver;
 pub mod decimals_token;
+pub mod fee_token;
