@@ -8,7 +8,7 @@
 //!
 //! ```toml
 //! [dev-dependencies]
-//! soroban-test-kit = { git = "https://github.com/your-org/soroban-test-kit" }
+//! soroban-test-kit = { git = "https://github.com/Akinyemi04/soroban-test-kit" }
 //! ```
 //!
 //! Then pull in the common items:
@@ -17,9 +17,10 @@
 //! use soroban_test_kit::prelude::*;
 //! ```
 //!
-//! The crate is `no_std` like every Soroban contract. The mock contracts are
-//! gated behind the `testutils` feature (enabled by default) because they rely
-//! on the Soroban SDK test environment.
+//! The crate is `no_std` like every Soroban contract. The mocks themselves
+//! build without any extra features; enable the optional `testutils` feature
+//! for helpers that need the Soroban SDK test environment (e.g.
+//! `asserts::panics::assert_panics`).
 
 pub mod asserts;
 pub mod mocks;

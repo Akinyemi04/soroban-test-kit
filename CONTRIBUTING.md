@@ -29,7 +29,7 @@ Thanks for your interest in contributing!
    ```sh
    cargo fmt --all -- --check
    cargo clippy --all-targets -- -D warnings
-   cargo test --workspace
+   cargo test --workspace --all-features
    cargo build --release --target wasm32-unknown-unknown
    ```
 

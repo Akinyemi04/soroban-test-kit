@@ -36,7 +36,7 @@ jobs:
         run: cargo clippy --all-targets -- -D warnings
 
       - name: Test
-        run: cargo test --workspace
+        run: cargo test --workspace --all-features
 
       - name: Build WASM
         run: cargo build --release --target wasm32-unknown-unknown

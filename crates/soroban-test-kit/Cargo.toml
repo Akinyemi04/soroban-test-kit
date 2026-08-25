@@ -10,9 +10,11 @@ repository.workspace = true
 crate-type = ["cdylib", "rlib"]
 
 [features]
-# Mocks are real Soroban contracts, so consumers register them in their own
-# test environments. They require the SDK testutils.
-default = ["testutils"]
+# `testutils` is off by default so the crate (and its wasm build) compiles
+# without it. `#[cfg(test)]` modules get it from [dev-dependencies] below;
+# consumers only need to enable it themselves for opt-in helpers like
+# `asserts::panics::assert_panics`.
+default = []
 testutils = ["soroban-sdk/testutils"]
 
 [dependencies]
