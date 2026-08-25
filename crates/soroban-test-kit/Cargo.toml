@@ -7,10 +7,16 @@ license.workspace = true
 repository.workspace = true
 
 [lib]
-crate-type = ["cdylib", "rlib"]
+# rlib only: these mocks are consumed via `env.register_contract(...)` in
+# native test Envs, never deployed as a wasm contract themselves. Several
+# mocks intentionally share method names (balance, transfer, mint, ...) to
+# stay interchangeable, which conflicts as soon as more than one is linked
+# into a single wasm binary (contractimpl exports each by its raw name) —
+# so this crate is not wasm32-buildable as a whole, by design.
+crate-type = ["rlib"]
 
 [features]
-# `testutils` is off by default so the crate (and its wasm build) compiles
+# `testutils` is off by default so plain `cargo build`/`cargo check` works
 # without it. `#[cfg(test)]` modules get it from [dev-dependencies] below;
 # consumers only need to enable it themselves for opt-in helpers like
 # `asserts::panics::assert_panics`.

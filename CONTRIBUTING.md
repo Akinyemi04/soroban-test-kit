@@ -20,21 +20,20 @@ Thanks for your interest in contributing!
    ```
    Prefixes: `feat/`, `fix/`, `refactor/`, `test/`, `docs/`, `chore/`.
 
-2. Make sure the toolchain is set up:
-   ```sh
-   rustup target add wasm32-unknown-unknown
-   ```
-
-3. Before opening a PR, confirm all of these pass:
+2. Before opening a PR, confirm all of these pass:
    ```sh
    cargo fmt --all -- --check
-   cargo clippy --all-targets -- -D warnings
+   cargo clippy --all-targets --all-features -- -D warnings
    cargo test --workspace --all-features
-   cargo build --release --target wasm32-unknown-unknown
    ```
 
-4. Open a PR referencing the issue with `Closes #<issue>`. Explain what
+3. Open a PR referencing the issue with `Closes #<issue>`. Explain what
    changed and why.
+
+Note: mocks are `#[contract]` structs registered natively in a test `Env`
+(`env.register_contract(...)`), not compiled to wasm — several intentionally
+share method names (e.g. `balance`, `transfer`) to stay interchangeable, so
+don't add a build targeting `wasm32-unknown-unknown` for the whole crate.
 
 ## Code style
 
@@ -46,7 +45,6 @@ Thanks for your interest in contributing!
 ## PR checklist
 
 - [ ] `cargo fmt --all -- --check` passes
-- [ ] `cargo clippy --all-targets -- -D warnings` passes
-- [ ] `cargo test --workspace` passes
-- [ ] WASM build succeeds
+- [ ] `cargo clippy --all-targets --all-features -- -D warnings` passes
+- [ ] `cargo test --workspace --all-features` passes
 - [ ] New behavior is covered by tests

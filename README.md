@@ -75,12 +75,15 @@ fn pool_accepts_deposits() {
 ## Building & testing
 
 ```sh
-rustup target add wasm32-unknown-unknown   # one-time
-cargo test --workspace                     # run the suite
-cargo build --release --target wasm32-unknown-unknown
+cargo test --workspace --all-features
 ```
 
-Pinned to `soroban-sdk 21.7.7`.
+Pinned to `soroban-sdk 21.7.7`. This crate ships `rlib` only — the mocks
+are registered natively in a test `Env` (`env.register_contract(...)`),
+never compiled to wasm themselves, since several are intentionally
+interchangeable (same `balance`/`transfer`/`mint` surface) and that only
+works when each lives in its own contract's wasm binary, not bundled
+together in one.
 
 ---
 
