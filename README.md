@@ -1,6 +1,6 @@
 # soroban-test-kit
 
-[![CI](https://github.com/your-org/soroban-test-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/soroban-test-kit/actions/workflows/ci.yml)
+[![CI](https://github.com/Akinyemi04/soroban-test-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/Akinyemi04/soroban-test-kit/actions/workflows/ci.yml)
 
 **Reusable testing infrastructure for Soroban smart contracts** — mock
 contracts, assertion helpers, and fuzzing/invariant harnesses you add as a
@@ -19,16 +19,20 @@ audited, `no_std` crate so contract authors can focus on testing *their* logic.
 | Module | Status | Provides |
 |---|---|---|
 | `mocks::token` | ✅ shipped | A minimal, registerable mock fungible token (mint / transfer / balance) |
-| `asserts` | ✅ shipped | `approx_eq` + `assert_approx_eq!` for rounding-tolerant math checks |
-| `mocks::oracle` | 🚧 seed issue | Mock price-feed contract for DeFi tests |
-| `mocks::sac` | 🚧 seed issue | Stellar Asset Contract–style mock |
-| `asserts::auth` | 🚧 seed issue | `assert_auth_required!` helper |
-| `asserts::budget` | 🚧 seed issue | Gas/CPU/memory budget ceilings |
-| `harness` | 🚧 seed issue | Property-based & invariant fuzzing loops |
-| `recipes/` | 🚧 seed issue | Documented, copy-pasteable test patterns |
+| `mocks::sac` | ✅ shipped | Stellar Asset Contract–style mock (allowances, `transfer_from`, decimals) |
+| `mocks` (burnable, allowance, fee-on-transfer, fixed-decimals, counter, event-emitter, no-op, panic-on-call, configurable-return) | ✅ shipped | Purpose-built stand-ins for common contract dependencies |
+| `asserts` (approx-eq, address-equality, sorted, vec-unordered, address-in-set, map-contains, zero/nonzero, panics, within-pct) | ✅ shipped | Ergonomic assertion helpers for common contract-test checks |
+| `mocks::oracle` | 🚧 open issue | Mock price-feed contract for DeFi tests |
+| `asserts::auth` | 🚧 open issue | `assert_auth_required!` helper |
+| `asserts::budget` | 🚧 open issue | Gas/CPU/memory budget ceilings |
+| `asserts::events` | 🚧 open issue | Event-emission assertion helper |
+| `mocks::flash_receiver` | 🚧 open issue | Configurable flash-loan receiver mock |
+| `asserts::balances` | 🚧 open issue | Balance-delta assertion helpers |
+| `harness` | 🚧 open issue | Property-based & invariant fuzzing loops |
+| `recipes/` | 🚧 open issue | Documented, copy-pasteable test patterns |
 
-The 🚧 items are scoped, beginner-friendly issues — see
-[`OPEN_SOURCE_ISSUES.md`](./OPEN_SOURCE_ISSUES.md).
+The 🚧 items are tracked as [open issues](https://github.com/Akinyemi04/soroban-test-kit/issues) —
+see [`CONTRIBUTING.md`](./CONTRIBUTING.md) to get started.
 
 ---
 
@@ -38,7 +42,7 @@ Add it as a dev-dependency in any Soroban contract crate:
 
 ```toml
 [dev-dependencies]
-soroban-test-kit = { git = "https://github.com/your-org/soroban-test-kit" }
+soroban-test-kit = { git = "https://github.com/Akinyemi04/soroban-test-kit" }
 ```
 
 Then in your test module:
@@ -76,17 +80,16 @@ cargo test --workspace                     # run the suite
 cargo build --release --target wasm32-unknown-unknown
 ```
 
-Pinned to `soroban-sdk 21.7.7` to stay in lockstep with the rest of the
-ecosystem (`soroban-amm`, `stellarspend-contracts`).
+Pinned to `soroban-sdk 21.7.7`.
 
 ---
 
 ## Contributing
 
-This repository participates in **[Drips Wave](https://docs.drips.network/wave/)**.
-Issues are scoped to a single file each and tagged with point values. See
-[`CONTRIBUTING.md`](./CONTRIBUTING.md) and
-[`OPEN_SOURCE_ISSUES.md`](./OPEN_SOURCE_ISSUES.md) to get started.
+Contributions are welcome. Check the
+[open issues](https://github.com/Akinyemi04/soroban-test-kit/issues) — many
+are scoped to a single new file and labeled `good first issue` — and see
+[`CONTRIBUTING.md`](./CONTRIBUTING.md) for the development workflow.
 
 ## License
 

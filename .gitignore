@@ -4,6 +4,7 @@ Cargo.lock
 .DS_Store
 # Soroban emits test snapshot JSON during `cargo test`
 test_snapshots/
-# Documentation/strategy markdown kept out of the published repo (README is published)
+# Internal strategy/planning markdown kept out of the published repo
 *.md
 !README.md
+!CONTRIBUTING.md
