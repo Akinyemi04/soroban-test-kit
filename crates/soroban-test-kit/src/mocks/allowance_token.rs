@@ -89,9 +89,10 @@ impl MockAllowanceToken {
         assert!(from_balance >= amount, "insufficient balance");
         let to_balance = Self::balance(env.clone(), to.clone());
 
-        env.storage()
-            .persistent()
-            .set(&DataKey::Allowance(from.clone(), spender), &(allowed - amount));
+        env.storage().persistent().set(
+            &DataKey::Allowance(from.clone(), spender),
+            &(allowed - amount),
+        );
         env.storage()
             .persistent()
             .set(&DataKey::Balance(from), &(from_balance - amount));
@@ -114,7 +115,7 @@ mod test {
     use super::*;
     use soroban_sdk::{testutils::Address as _, Address, Env};
 
-    fn setup(env: &Env) -> (MockAllowanceTokenClient, Address) {
+    fn setup(env: &Env) -> (MockAllowanceTokenClient<'_>, Address) {
         let admin = Address::generate(env);
         let id = env.register_contract(None, MockAllowanceToken);
         let client = MockAllowanceTokenClient::new(env, &id);

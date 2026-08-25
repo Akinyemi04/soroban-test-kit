@@ -110,7 +110,7 @@ mod test {
     use super::*;
     use soroban_sdk::{testutils::Address as _, Address, Env};
 
-    fn setup(env: &Env) -> (MockBurnableTokenClient, Address) {
+    fn setup(env: &Env) -> (MockBurnableTokenClient<'_>, Address) {
         let admin = Address::generate(env);
         let id = env.register_contract(None, MockBurnableToken);
         let client = MockBurnableTokenClient::new(env, &id);

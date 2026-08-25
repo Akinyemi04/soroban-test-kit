@@ -16,8 +16,7 @@
 /// Uses saturating subtraction so the larger-minus-smaller difference is taken
 /// without risk of underflow.
 pub fn approx_eq_u128(a: u128, b: u128, tolerance: u128) -> bool {
-    let diff = if a >= b { a - b } else { b - a };
-    diff <= tolerance
+    a.abs_diff(b) <= tolerance
 }
 
 /// Asserts two `u128` values are within `tolerance`, panicking otherwise.
@@ -38,7 +37,7 @@ macro_rules! assert_approx_eq_u128 {
                 a,
                 b,
                 tol,
-                if a >= b { a - b } else { b - a }
+                a.abs_diff(b)
             );
         }
     }};

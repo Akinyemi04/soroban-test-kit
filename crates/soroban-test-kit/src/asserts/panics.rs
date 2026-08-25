@@ -46,7 +46,7 @@ mod test {
 
     #[test]
     fn detects_an_assert_failure() {
-        assert_panics(|| assert!(false, "nope"));
+        assert_panics(|| panic!("nope"));
     }
 
     #[test]

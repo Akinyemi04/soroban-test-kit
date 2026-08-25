@@ -31,10 +31,7 @@ impl MockConfigurableReceiver {
 
     /// Return the configured value, or `0` if none was set.
     pub fn call(env: Env) -> i128 {
-        env.storage()
-            .instance()
-            .get(&DataKey::Return)
-            .unwrap_or(0)
+        env.storage().instance().get(&DataKey::Return).unwrap_or(0)
     }
 }
 

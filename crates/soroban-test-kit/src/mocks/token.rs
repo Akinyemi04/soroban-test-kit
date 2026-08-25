@@ -92,7 +92,7 @@ mod test {
     use super::*;
     use soroban_sdk::{testutils::Address as _, Address, Env};
 
-    fn setup(env: &Env) -> (MockTokenClient, Address) {
+    fn setup(env: &Env) -> (MockTokenClient<'_>, Address) {
         let admin = Address::generate(env);
         let id = env.register_contract(None, MockToken);
         let client = MockTokenClient::new(env, &id);

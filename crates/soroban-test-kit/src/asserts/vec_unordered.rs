@@ -55,10 +55,7 @@ macro_rules! assert_vec_eq_unordered {
         let a = $a;
         let b = $b;
         if !$crate::asserts::vec_unordered::vec_eq_unordered(&a, &b) {
-            panic!(
-                "vec multiset mismatch: left = {:?}, right = {:?}",
-                a, b
-            );
+            panic!("vec multiset mismatch: left = {:?}, right = {:?}", a, b);
         }
     }};
 }

@@ -75,12 +75,12 @@ mod test {
     }
 }
 pub mod addr_eq;
-pub mod vec_unordered;
-pub mod sorted;
-pub mod approx_u128;
-pub mod approx_i64;
 pub mod address_set;
+pub mod approx_i64;
+pub mod approx_u128;
 pub mod map_contains;
-pub mod zeroness;
 pub mod panics;
+pub mod sorted;
+pub mod vec_unordered;
 pub mod within_pct;
+pub mod zeroness;

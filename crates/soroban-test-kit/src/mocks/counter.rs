@@ -41,10 +41,7 @@ impl MockCounter {
 
     /// Read the current count. Returns `0` before the first increment.
     pub fn get(env: Env) -> u32 {
-        env.storage()
-            .instance()
-            .get(&DataKey::Count)
-            .unwrap_or(0)
+        env.storage().instance().get(&DataKey::Count).unwrap_or(0)
     }
 
     /// Reset the count back to zero.
