@@ -7,3 +7,4 @@ test_snapshots/
 *.md
 !README.md
 !CONTRIBUTING.md
+!recipes/**/*.md
