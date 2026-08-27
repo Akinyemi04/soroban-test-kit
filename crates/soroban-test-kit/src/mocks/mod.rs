@@ -13,6 +13,7 @@ pub mod decimals_token;
 pub mod event_emitter;
 pub mod fee_token;
 pub mod noop;
+pub mod oracle;
 pub mod panic_on_call;
 pub mod sac;
 pub mod token;
