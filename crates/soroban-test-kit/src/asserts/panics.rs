@@ -7,10 +7,9 @@
 //! ## `no_std` / panic-strategy note
 //! This relies on [`std::panic::catch_unwind`], so it is only available when
 //! `std` is present. The crate is `#![no_std]`, but the test harness links
-//! `std`, so this helper is gated behind the `testutils` feature (enabled by
-//! default) and pulls in `std` explicitly. It requires the `unwind` panic
-//! strategy; under `panic = "abort"` a panic terminates the process and cannot
-//! be caught.
+//! `std`, so this helper is gated behind the opt-in `testutils` feature and
+//! pulls in `std` explicitly. It requires the `unwind` panic strategy; under
+//! `panic = "abort"` a panic terminates the process and cannot be caught.
 //!
 //! ```ignore
 //! use soroban_test_kit::asserts::panics::assert_panics;

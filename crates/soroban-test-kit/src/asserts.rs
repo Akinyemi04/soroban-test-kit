@@ -1,9 +1,9 @@
 //! Assertion helpers for contract tests.
 //!
 //! This module starts deliberately small — one well-tested helper. Additional
-//! assertions (gas/budget ceilings, auth-failure expectations, event emission
-//! checks) are tracked as individual seed issues so each lands in its own file
-//! without merge conflicts.
+//! assertions (gas/budget ceilings, event emission checks, ...) are tracked as
+//! individual GitHub issues so each lands in its own file without merge
+//! conflicts.
 
 /// Returns `true` when `a` and `b` differ by no more than `tolerance`.
 ///
@@ -78,6 +78,7 @@ pub mod addr_eq;
 pub mod address_set;
 pub mod approx_i64;
 pub mod approx_u128;
+pub mod auth;
 pub mod map_contains;
 pub mod panics;
 pub mod sorted;
