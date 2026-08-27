@@ -21,15 +21,15 @@ audited, `no_std` crate so contract authors can focus on testing *their* logic.
 | `mocks::token` | ✅ shipped | A minimal, registerable mock fungible token (mint / transfer / balance) |
 | `mocks::sac` | ✅ shipped | Stellar Asset Contract–style mock (allowances, `transfer_from`, decimals) |
 | `mocks` (burnable, allowance, fee-on-transfer, fixed-decimals, counter, event-emitter, no-op, panic-on-call, configurable-return) | ✅ shipped | Purpose-built stand-ins for common contract dependencies |
+| `mocks::oracle` | ✅ shipped | Mock price-feed contract for DeFi tests |
 | `asserts` (approx-eq, address-equality, sorted, vec-unordered, address-in-set, map-contains, zero/nonzero, panics, within-pct) | ✅ shipped | Ergonomic assertion helpers for common contract-test checks |
-| `mocks::oracle` | 🚧 open issue | Mock price-feed contract for DeFi tests |
-| `asserts::auth` | 🚧 open issue | `assert_auth_required!` helper |
+| `asserts::auth` | ✅ shipped | `assert_auth_required` helper (requires the `testutils` feature) |
+| `recipes/` | ✅ shipped | Documented, copy-pasteable test patterns |
 | `asserts::budget` | 🚧 open issue | Gas/CPU/memory budget ceilings |
 | `asserts::events` | 🚧 open issue | Event-emission assertion helper |
 | `mocks::flash_receiver` | 🚧 open issue | Configurable flash-loan receiver mock |
 | `asserts::balances` | 🚧 open issue | Balance-delta assertion helpers |
 | `harness` | 🚧 open issue | Property-based & invariant fuzzing loops |
-| `recipes/` | 🚧 open issue | Documented, copy-pasteable test patterns |
 
 The 🚧 items are tracked as [open issues](https://github.com/Akinyemi04/soroban-test-kit/issues) —
 see [`CONTRIBUTING.md`](./CONTRIBUTING.md) to get started.
