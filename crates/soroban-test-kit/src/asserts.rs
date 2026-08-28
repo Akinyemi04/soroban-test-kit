@@ -79,6 +79,7 @@ pub mod address_set;
 pub mod approx_i64;
 pub mod approx_u128;
 pub mod auth;
+pub mod balances;
 pub mod map_contains;
 pub mod panics;
 pub mod sorted;
