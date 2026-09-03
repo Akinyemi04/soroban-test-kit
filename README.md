@@ -26,8 +26,8 @@ audited, `no_std` crate so contract authors can focus on testing *their* logic.
 | `asserts::auth` | ✅ shipped | `assert_auth_required` helper (requires the `testutils` feature) |
 | `recipes/` | ✅ shipped | Documented, copy-pasteable test patterns |
 | `asserts::balances` | ✅ shipped | `assert_balance_change` helper |
+| `asserts::events` | ✅ shipped | `assert_event_emitted` helper |
 | `asserts::budget` | 🚧 open issue | Gas/CPU/memory budget ceilings |
-| `asserts::events` | 🚧 open issue | Event-emission assertion helper |
 | `mocks::flash_receiver` | 🚧 open issue | Configurable flash-loan receiver mock |
 | `harness` | 🚧 open issue | Property-based & invariant fuzzing loops |
 
