@@ -72,11 +72,18 @@ fn pool_accepts_deposits() {
 
 ---
 
-## Building & testing
+## Development setup
 
-```sh
-cargo test --workspace --all-features
-```
+1. Install Rust via [rustup](https://rustup.rs) (stable toolchain).
+2. Clone the repo:
+   ```sh
+   git clone https://github.com/Akinyemi04/soroban-test-kit.git
+   cd soroban-test-kit
+   ```
+3. Run the test suite:
+   ```sh
+   cargo test --workspace --all-features
+   ```
 
 Pinned to `soroban-sdk 21.7.7`. This crate ships `rlib` only — the mocks
 are registered natively in a test `Env` (`env.register_contract(...)`),
@@ -87,12 +94,36 @@ together in one.
 
 ---
 
+## Roadmap
+
+Near-term work is tracked as scoped, single-file
+[open issues](https://github.com/Akinyemi04/soroban-test-kit/issues) —
+mostly rounding out `asserts` (budget ceilings) and `mocks`
+(flash-loan receiver), plus a property-based/invariant fuzzing `harness`
+and CI coverage reporting. See the status table above for what's shipped.
+
+Beyond that:
+
+- Publish to [crates.io](https://crates.io) once the current API has had
+  time to settle.
+- A `cargo-soroban-test` companion CLI for scaffolding new test modules
+  from the shipped mocks/asserts.
+
+---
+
 ## Contributing
 
 Contributions are welcome. Check the
 [open issues](https://github.com/Akinyemi04/soroban-test-kit/issues) — many
 are scoped to a single new file and labeled `good first issue` — and see
 [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the development workflow.
+
+## Questions & contact
+
+Bug reports, feature requests, and usage questions all go through
+[GitHub Issues](https://github.com/Akinyemi04/soroban-test-kit/issues).
+For anything else, reach the maintainer at
+[@Akinyemi04](https://github.com/Akinyemi04).
 
 ## License
 
